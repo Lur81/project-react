@@ -1,0 +1,55 @@
+.characters {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    justify-content: center;
+    gap: 45px;
+  
+    img {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 160px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    img:hover {
+      box-shadow: 2px 5px 5px white;
+    }
+  }
+  
+  .personajes {
+    border-radius: 10px;
+  }
+  
+  .personajes:hover {
+    transform: scale(1.1);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .imagen {
+    position: relative;
+  }
+  
+  .nombre {
+    width: 150px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.927);
+    padding: 4px;
+    font-weight: bold;
+    font-size: 10px;
+    white-space: nowrap;
+    color: white
+  }
+  

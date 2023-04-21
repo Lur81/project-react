@@ -1,0 +1,39 @@
+.houses {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  justify-content: center;
+  gap: 45px;
+}
+.houses img {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: auto;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.houses img:hover {
+  box-shadow: 2px 4px 4px white;
+}
+
+.homes {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  color: white;
+}
+
+.homes:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}/*# sourceMappingURL=HousePage.css.map */

@@ -1,0 +1,13 @@
+.iconos img {
+  width: 50px;
+}
+
+.header {
+  padding: 20px 200px 0px 0px;
+}
+
+.iconos {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}/*# sourceMappingURL=Header.css.map */

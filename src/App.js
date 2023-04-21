@@ -1,30 +1,47 @@
-import logo from './logo.svg';
-import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
+import axios from "axios";
+import { useEffect, useState } from "react";
 import CharacterPage from './pages/CharacterPage/CharacterPage';
-import CharacterDetailPage from './pages/ChararterDetailPage/ChararterDetailPage';
-import HousePage from './pages/HousePage/HousePage';
-import HouseDetailPage from './pages/HouseDetailPage/HouseDetailPage';
-import ChronologyPage from './pages/ChronologyPage/ChronologyPage';
+import ChronologyPage from "./pages/ChronologyPage/ChronologyPage";
+import HousePage from "./pages/HousePage/HousePage";
+import CharacterDetail from "./pages/ChararterDetail/ChararterDetail";
 
 function App() {
+
+  const [characters, setCharacters] = useState([]);
+  const [houses, setHouses] = useState([]);
+  
+
+
+  const getCharacters = () => {
+    axios.get("http://localhost:3000/characters/").then(res => {
+        setCharacters(res.data)
+        console.log(res.data)
+    })
+}
+  const getHouses = () => {
+    axios.get("http://localhost:3000/houses").then(res => {
+        setHouses(res.data)
+        console.log(res.data)
+    })
+}
+
+useEffect(() => {
+    getCharacters();
+    getHouses();
+}, [])
+
   return (
     <Router>
-
-      <nav className='header_nav'>
-        <Link className='nav_link' to="/character">Personajes</Link>
-        <Link className='nav_link' to="/house">Casas</Link>
-        <Link className='nav_link' to="/chronology">Cronologia</Link>
-      </nav>
-      
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/character' element={<CharacterPage/>}/>
-        <Route path='/character/:id' element={<CharacterDetailPage/>}/>
-        <Route path='/house' element={<HousePage/>}/>
-        <Route path='/house/:id' element={<HouseDetailPage/>}/>
-        <Route path='/chronology' element={<ChronologyPage/>}/>
+        <Route path='/character' element={<CharacterPage characters={characters} />} />
+        <Route path='/characters/:id' element={<CharacterDetail />} />
+        <Route path='/house' element={<HousePage houses={houses}/>}/>
+        {/* <Route path='/house/:id' element={<HouseDetailPage/>}/> */}
+        <Route path='/chronology' element={<ChronologyPage characters={characters}/>}/>
       </Routes>
     </Router>
   );
