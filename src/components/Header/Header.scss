@@ -1,13 +1,51 @@
-.iconos img {
-    width: 50px;
-}
-
 .header {
-  padding: 20px 200px 0px 0px;
-}
+  padding-top: 20px;
 
-.iconos {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+
+.elementos {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30%;
+
+    .buscador {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .btn_back{
+        border: none;
+        background: none;
+        color: white;
+        cursor: pointer;
+      }
+      
+      .btn_back::before{
+        content:"ᐸ  ";
+      }
+
+      .input_buscar {
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        border-bottom: 1px solid white;
+        width: 200px;
+        color: white;
+      }
+
+    }
+
+    .banderas {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    
+      .band_img  {
+          width: 50px;
+          height: 40px;
+      }
+    }
+
+}
 }

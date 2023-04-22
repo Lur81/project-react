@@ -1,0 +1,23 @@
+{
+"character": "personaje",
+"characters": "personajes",
+"name": "nombre",
+"house": "casa",
+"houses": "casas",
+"parents": "padres",
+"siblings":"hermanos",
+"title": "título",
+"titles": "títulos",
+"alliances":"alianzas",
+"episodes": "capítulos",
+"age":"edad",
+"settlement": "Sede",
+"region": "region",
+"religions":"religiones",
+"foundation":  "fundación",
+"chronology": "cronología",
+"search":"buscar",
+"got": "Juego de Tronos",
+"back": "volver"
+
+}

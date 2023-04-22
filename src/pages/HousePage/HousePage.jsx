@@ -1,4 +1,8 @@
 import './HousePage.scss';
+import Footer from "../../components/Footer/Footer"
+import Header from "../../components/Header/Header"
+import { Link } from 'react-router-dom';
+
 
 export default function HousePage ({houses}){
 
@@ -24,18 +28,27 @@ export default function HousePage ({houses}){
     //AQUI IGUAL QUE EN EL DE CHARACTERSPAGE
 
         return(
+            <div>
+            <Header/>
             <div className="container">
-            <div className="houses">
-                {houses && houses.map((house,index) => (
-                <div key={index}>
-                    <div className="homes">
-                        <img src={`http://localhost:3000${house.image}`} alt={house.name}/>
-                        <h3>{house.name}</h3>
+                <div className="contenedor">
+                    <div className="houses">
+                        {houses && houses.map((house,index) => (
+                            <div key={index}>
+                                <div className="homes">
+                                    <Link to={`/houses/${house.id}`}>
+                                        <img src={`http://localhost:3000${house.image}`} alt={house.name}/>
+                                        <h3 className="homes__name">{house.name}</h3>
+                                    </Link>
+
+                                </div>
+                                
+                            </div>
+                        ))}
                     </div>
-                    
                 </div>
-            ))}
-            </div>
+                </div>
+            <Footer />
             </div>
         )
     

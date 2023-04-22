@@ -10,13 +10,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &_text {
+        color:#ffffff;
+        font-size: 150px;
+        font-weight: 300;
+        text-align: center;
+        
+    }
   
 }
 
-.title_text {
-    color:#ffffff;
-    font-size: 150px;
-    font-weight: 300;
-    text-align: center;
-    
-}

@@ -1,25 +1,40 @@
+.contenedor{
+  padding: 39px;
+}
 .houses {
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid black;
-    justify-content: center;
-    gap: 45px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-y: scroll;
+  height: 77vh;
   
     img {
       margin-top: 30px;
-      margin-bottom: 30px;
       width: auto;
       height: 180px;
       object-fit: cover;
-      border-radius: 10px;
-      // object-fit: cover;
     }
-    img:hover {
-      box-shadow: 2px 4px 4px white;
-    }
+
+    // img:hover {
+    //   box-shadow: 2px 4px 4px white;
+    // }
+
+    
   }
-  
+  .houses::-webkit-scrollbar {
+    width: 4px;
+    background-color: #443d3d;
+  }
+
+
+
+  .houses::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: white;
+    background-clip: content-box;
+  }
   .homes {
       max-width: 100%;
     display: flex;
@@ -27,7 +42,13 @@
     flex-direction: column;
     border-radius: 10px;
     color: white;
+
+    &__name{
+      font-weight: 300;
+      font-size: 15px;
+    }
   }
+  
   .homes:hover {
     transform: scale(1.1);
   }
