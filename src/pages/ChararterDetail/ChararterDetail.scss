@@ -1,0 +1,50 @@
+.character-detail{
+  overflow-y: scroll;
+  height: 130px;
+  line-height: 17px;
+}
+.character-detail::-webkit-scrollbar {
+    width: 4px;
+    background-color: #443d3d;
+  }
+
+
+
+  .character-detail::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: white;
+    background-clip: content-box;
+  }
+
+  .image-character{
+    max-height: 365px;
+  }
+  .contenedor-house{
+    width: 17%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-house{
+    width: 50%;
+  }
+  
+  .image-character-detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  .titulo-character-detail{
+    text-align: center;
+    font-weight: 300;
+  }
+  
+  .contenedor-detalles{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+  }

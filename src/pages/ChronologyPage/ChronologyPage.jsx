@@ -21,7 +21,8 @@ export default function ChronologyPage({characters}){
             <Header/>
             <div className="container">
                 <div>
-                    <button onClick={orderByAge}>{ageAsc ? "Order Desc" : "Order Asc"}</button> // aqui hay que cambiar ord por el numero
+                    <button onClick={orderByAge}>{ageAsc ? "Order Desc" : "Order Asc"}</button> 
+                    {/* // aqui hay que cambiar ord por el numero */}
                 </div>
                 
                 <div className="characters">
