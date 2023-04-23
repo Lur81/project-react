@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/Header/Header"
 import { useTranslation } from "react-i18next";
+import "./HouseDetail.scss"
 
 
 export default function HouseDetail() {
@@ -24,9 +25,9 @@ export default function HouseDetail() {
         getHousesById("");
     },[])
 
-    const retroceder = () => {
-          window.history.back();
-    }
+    // const retroceder = () => {
+    //       window.history.back();
+    // }
 
     return (
         <div>
@@ -34,13 +35,30 @@ export default function HouseDetail() {
                 <Header />
             </div>
 
-            <div className="row">
-                <p>{ t('name') }:{detail.name}</p>
-                <p>{ t('settlement') }:{detail.settlement}</p>
-                <p>{ t('region') }:{detail.region}</p>
-                <p>{ t('alliances') }:{detail.alliances}</p>
-                <p>{ t('religions') }:{detail.religions}</p>
-                <p>{ t('foundation') }:{detail.foundation}</p>
+            <div className="contenedor">
+                <div className="image-character-detail">
+                <img src={`http://localhost:3000${detail.image}`} alt={detail.name} className="image-character" />
+                <h2>{detail.name}</h2>
+                </div>
+                <div className="contenedor-detalles">
+                    <div>{ t('settlement') }
+                    <p>{detail.settlement}</p>
+                    </div>
+                    <div>{ t('region') }
+                    <p>{detail.region}</p>
+                    </div>
+                    <div>{ t('alliances') }
+                    {detail.alliances && detail.alliances.map((alianza, index) => (
+                        <li key={index}><p>{alianza}</p></li>
+                    ))}
+                    </div>
+                    <div>{ t('religions') }
+                    <p>{detail.religions}</p>
+                    </div>
+                    <div>{ t('foundation') }
+                    <p>{detail.foundation}</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
