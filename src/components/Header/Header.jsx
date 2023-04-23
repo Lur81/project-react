@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import "./Header.scss";
 import { Link, useLocation } from 'react-router-dom';
-// import { useState } from "react";
-// import CharacterDetail from "../../pages/ChararterDetail/ChararterDetail";
+import { useContext } from "react";
+import { SearchContext } from "../../App";
 
 export default function Header(){
 
@@ -15,7 +15,7 @@ export default function Header(){
     const location = useLocation()
     console.log(location.pathname);
 
-    // const [searchText, setSearchText] = useState("");
+    const {searchText, setSearchText} = useContext(SearchContext);
     
 
     return(
@@ -33,8 +33,7 @@ export default function Header(){
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                         </svg>
                             <input type="text" className="input_buscar" placeholder= {t('search')}
-                                // value={searchText}
-                                // onChange={(e) => setSearchText(e.target.value)}
+                                onChange={(e) => setSearchText(e.target.value)}
                             />
                     </div>}
                     

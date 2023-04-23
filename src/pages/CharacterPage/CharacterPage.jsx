@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
 import './CharacterPage.scss';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { SearchContext } from '../../App';
 
 export default function CharacterPage({ characters }) {
   const [hoveredId, setHoveredId] = useState();
+  const {searchText, setSearchText} = useContext(SearchContext);
 
     return (
         <div>
@@ -14,7 +16,7 @@ export default function CharacterPage({ characters }) {
         <div className="container">
             <div className='contenedor'>
             <div className="characters">
-                {characters.map((charac) => (
+                {characters.filter((dataSearch)=> dataSearch.name.toLowerCase().includes(searchText)).map((charac) => (
                     <div className="personajes" key={charac.id}
                     onMouseEnter={() => setHoveredId(charac.id)}
                     onMouseLeave={() => setHoveredId(null)}

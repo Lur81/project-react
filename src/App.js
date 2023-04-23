@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.scss';
 import axios from "axios";
-import { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import HomePage from './pages/HomePage/HomePage';
 import CharacterPage from './pages/CharacterPage/CharacterPage';
@@ -10,9 +10,11 @@ import HousePage from "./pages/HousePage/HousePage";
 import HouseDetail from "./pages/HouseDetail/HouseDetail";
 import ChronologyPage from "./pages/ChronologyPage/ChronologyPage";
 
-
+export const SearchContext = React.createContext();
 
 function App() {
+
+  const [searchText, setSearchText] = useState("");
 
   const [t] = useTranslation('global');
   const [characters, setCharacters] = useState([]);
@@ -43,6 +45,7 @@ function App() {
 
   return (
     <div>
+    <SearchContext.Provider value={{searchText, setSearchText}}>
    <Suspense fallback= "Cargando...">
     <Router>
       <Routes>
@@ -55,6 +58,7 @@ function App() {
       </Routes>
     </Router>
     </Suspense> 
+    </SearchContext.Provider>
     </div>
   );
 }

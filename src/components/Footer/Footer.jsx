@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {  NavLink } from "react-router-dom"
 import "./Footer.scss"
 import { useTranslation } from "react-i18next";
 
@@ -7,9 +7,9 @@ export default function Footer(){
     return(
         <div className="footer">
             <nav className='footer_nav'>
-                <div><Link className='nav_link' to="/character">{ t('characters') }</Link></div>
-                <div><Link className='nav_link' to="/house">{ t('houses') }</Link></div>
-                <div><Link className='nav_link' to="/chronology">{ t('chronology') }</Link></div>
+                <div><NavLink className='nav_link' to="/character">{ t('characters') }</NavLink></div>
+                <div><NavLink className='nav_link' to="/house">{ t('houses') }</NavLink></div>
+                <div><NavLink className='nav_link' to="/chronology">{ t('chronology') }</NavLink></div>
             </nav>
         </div>
     )

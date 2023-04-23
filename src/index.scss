@@ -20,4 +20,12 @@ a, a:visited, a:hover, a:active {
 p{
   font-family: helvetica, sans-serif;
 }
+.active {
+  text-decoration: underline;
+ } 
 
+ .a:visited{
+   color: white ;
+   text-decoration: underline;
+   cursor: pointer;
+  }
