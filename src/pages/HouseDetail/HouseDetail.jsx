@@ -23,7 +23,7 @@ export default function HouseDetail() {
 
     useEffect(()=>{
         getHousesById("");
-    },[])
+    },)
 
     // const retroceder = () => {
     //       window.history.back();

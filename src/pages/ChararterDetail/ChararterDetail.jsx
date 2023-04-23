@@ -27,7 +27,7 @@ export default function CharacterDetail() {
 
     useEffect(() => {
         getCharactersById("")
-    },[]);
+    },);
 
     return (
       
