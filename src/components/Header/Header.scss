@@ -1,7 +1,10 @@
 .header {
   padding-top: 20px;
 
-
+ .band_btn{
+  border: none;
+  background: none;
+ }
 .elementos {
   display: flex;
   flex-wrap: nowrap;

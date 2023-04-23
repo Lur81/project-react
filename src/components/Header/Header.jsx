@@ -38,8 +38,8 @@ export default function Header(){
                     {location.pathname !== '/' &&
                         <Link to={`/`}><img className="band_img" src="assets/home.png" alt="home" /></Link>
                     }
-                    <button onClick={() => i18n.changeLanguage("es")}><img className="band_img" src="assets/spanish.png" alt="Bandera españa"/></button>
-                    <button onClick={() => i18n.changeLanguage("en")}><img className="band_img" src="assets/english.png" alt="Bandera inglesa"/></button>
+                    <button onClick={() => i18n.changeLanguage("es")} className="band_btn"><img className="band_img" src="assets/spanish.png" alt="Bandera españa"/></button>
+                    <button onClick={() => i18n.changeLanguage("en")} className="band_btn"><img className="band_img" src="assets/english.png" alt="Bandera inglesa"/></button>
                 </div>
             </div>
         
