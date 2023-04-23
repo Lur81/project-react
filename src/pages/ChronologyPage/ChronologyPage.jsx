@@ -5,13 +5,14 @@ import { useState } from "react";
 
 export default function ChronologyPage({ characters }) {
   const [ageAsc, setAgeAsc] = useState(true);
-  const orderCharacters = [...characters].sort((a, b) =>
-    ageAsc ? a.age - b.age : b.age - a.age
-  );
-
   const orderByAge = () => {
     setAgeAsc(!ageAsc);
   };
+  const filteredCharacters = characters.filter((char) => char.age !== null);
+  const orderCharacters = [...filteredCharacters].sort((a, b) =>
+    ageAsc ? a.age - b.age : b.age - a.age
+  );
+
 
   return (
     <div>
@@ -24,12 +25,19 @@ export default function ChronologyPage({ characters }) {
                 <button onClick={orderByAge} className="btn-chronology">
                   {ageAsc ? "⇩" : "⇧"}
                 </button>
-                {/* // aqui hay que cambiar ord por el numero */}
+                {orderCharacters.length > 0 ? (
+                  <div className="btn-chronology">
+                    <p>{orderCharacters[0].age}</p>
+                  </div>
+                ) : (null
+                )}
               </div>
               {orderCharacters.map((charac) => (
                 <div key={charac.id} className="contenedor-chronology">
                   <div className="personajes">
-                    <p>{charac.age}</p>
+                  {charac.age? ( 
+                    <p> {charac.age} </p>) :
+                    null}   
                     <h5>{charac.name}</h5>
                     <div className="imagen">
                       <img
@@ -49,3 +57,8 @@ export default function ChronologyPage({ characters }) {
     </div>
   );
 }
+
+
+
+
+

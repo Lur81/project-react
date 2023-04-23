@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import "./Header.scss";
 import { Link, useLocation } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SearchContext } from "../../App";
 
 export default function Header(){
@@ -17,6 +17,9 @@ export default function Header(){
 
     const {searchText, setSearchText} = useContext(SearchContext);
     
+    useEffect(() => {
+        setSearchText("");
+    }, [location.pathname]);
 
     return(
         <div className="header">
@@ -36,6 +39,7 @@ export default function Header(){
                                 onChange={(e) => setSearchText(e.target.value)}
                             />
                     </div>}
+                    
                     
                 </div>
 

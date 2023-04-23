@@ -16,7 +16,7 @@ export default function CharacterPage({ characters }) {
         <div className="container">
             <div className='contenedor'>
             <div className="characters">
-                {characters.filter((dataSearch)=> dataSearch.name.toLowerCase().includes(searchText)).map((charac) => (
+                {characters && characters.filter((dataSearch)=> dataSearch.name.toLowerCase().includes(searchText)).map((charac) => (
                     <div className="personajes" key={charac.id}
                     onMouseEnter={() => setHoveredId(charac.id)}
                     onMouseLeave={() => setHoveredId(null)}
