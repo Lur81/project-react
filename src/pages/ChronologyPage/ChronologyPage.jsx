@@ -26,7 +26,7 @@ export default function ChronologyPage({ characters }) {
                   {ageAsc ? "⇩" : "⇧"}
                 </button>
                 {orderCharacters.length > 0 ? (
-                  <div className="btn-chronology">
+                  <div className="btn-chronology-age">
                     <p>{orderCharacters[0].age}</p>
                   </div>
                 ) : (null

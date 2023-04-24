@@ -26,6 +26,11 @@ i18next.use(initReactI18next).init({
         },                                      
 });
 
+i18next.on("languageChanged", (lng) => {
+  localStorage.setItem("language", lng);
+});
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
