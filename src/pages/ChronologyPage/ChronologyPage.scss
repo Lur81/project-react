@@ -45,24 +45,30 @@
 }
 
 .btn-chronology {
-  border: 2px solid white;
-  border-radius: 50px;
-  width: 32px;
-  height: 32px;
-  background: none;
-  color: white;
-  text-align: center;
-  background-color: black;
-  margin-bottom: 70px;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 70px;
+    margin-left: 11px;
 }
 
 .btn-chronology-age {
-  border: 2px solid white;
-  border-radius: 100px;
-  background: none;
-  color: white;
-  text-align: center;
-  margin-bottom: 70px;
+    border: 2px solid white;
+    border-radius: 100px;
+    background: none;
+    color: white;
+    text-align: center;
+    margin-bottom: 70px;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    z-index: 555555;
+    position: relative;
 }
 
 .contenedor-chronology:nth-child(odd) {
