@@ -2,13 +2,14 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.scss';
 import axios from "axios";
 import React, { useEffect, useState, Suspense } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import HomePage from './pages/HomePage/HomePage';
 import CharacterPage from './pages/CharacterPage/CharacterPage';
 import CharacterDetail from "./pages/ChararterDetail/ChararterDetail";
 import HousePage from "./pages/HousePage/HousePage";
 import HouseDetail from "./pages/HouseDetail/HouseDetail";
 import ChronologyPage from "./pages/ChronologyPage/ChronologyPage";
+import apiUrl from "./config";
 
 export const SearchContext = React.createContext();
 
@@ -16,21 +17,21 @@ function App() {
 
   const [searchText, setSearchText] = useState("");
 
-  const [t] = useTranslation('global');
+  // const [t] = useTranslation('global');
   const [characters, setCharacters] = useState([]);
   const [houses, setHouses] = useState([]);
 
   
   
   const getCharacters = () => {
-    axios.get("http://localhost:3000/characters/").then(res => {
+    axios.get(apiUrl + 'characters').then(res => {
         setCharacters(res.data)
         console.log(res.data)
     })
   }
 
   const getHouses = () => {
-    axios.get("http://localhost:3000/houses").then(res => {
+    axios.get(apiUrl + 'houses').then(res => {
         setHouses(res.data)
         console.log(res.data)
     })

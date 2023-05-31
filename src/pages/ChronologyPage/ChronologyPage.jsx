@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import apiUrl from "../../config";
 import "./ChronologyPage.scss";
 import { useState } from "react";
 
@@ -42,7 +43,7 @@ export default function ChronologyPage({ characters }) {
                     <div className="imagen">
                       <img
                         className="chrono_img"
-                        src={`http://localhost:3000${charac.image}`}
+                        src={apiUrl + charac.image}
                         alt={charac.name}
                       />
                     </div>

@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../../components/Header/Header"
 import { useTranslation } from "react-i18next";
 import "./HouseDetail.scss"
+import apiUrl from "../../config";
 
 
 export default function HouseDetail() {
@@ -15,7 +16,7 @@ export default function HouseDetail() {
     const [detail, setDetail] = useState([]);
 
     const getHousesById = () => {
-        axios.get(`http://localhost:3000/houses/${id}`).then(res => {
+        axios.get(apiUrl + 'houses/' + id).then(res => {
            setDetail(res.data)
             console.log("getHousesById", res.data)
         })
@@ -37,7 +38,7 @@ export default function HouseDetail() {
 
             <div className="contenedor">
                 <div className="image-character-detail">
-                <img src={`http://localhost:3000${detail.image}`} alt={detail.name} className="image-character" />
+                <img src={apiUrl + detail.image} alt={detail.name} className="image-character" />
                 <h2>{detail.name}</h2>
                 </div>
                 <div className="contenedor-detalles">

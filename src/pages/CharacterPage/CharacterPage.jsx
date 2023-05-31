@@ -4,10 +4,11 @@ import Header from "../../components/Header/Header"
 import './CharacterPage.scss';
 import { useContext, useState } from 'react';
 import { SearchContext } from '../../App';
+import apiUrl from '../../config';
 
 export default function CharacterPage({ characters }) {
   const [hoveredId, setHoveredId] = useState();
-  const {searchText, setSearchText} = useContext(SearchContext);
+  const {searchText} = useContext(SearchContext);
 
     return (
         <div>
@@ -23,7 +24,7 @@ export default function CharacterPage({ characters }) {
                     >
                         <div className="imagen">
                              <Link to={`/characters/${charac.id}`}>
-                                <img src={`http://localhost:3000${charac.image}`} alt={charac.name} />
+                                <img src={apiUrl + charac.image} alt={charac.name} />
                                 {hoveredId === charac.id && <h3 className='nombre'>{charac.name}</h3>}
                              </Link>
                         </div>

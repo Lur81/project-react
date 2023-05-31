@@ -9,7 +9,6 @@ import global_es from "./Translations/es/global.json"
 import global_en from "./Translations/en/global.json"
 
 
-
 const userLang = navigator.language.substring(0, 2); 
 
 i18next.use(initReactI18next).init({  

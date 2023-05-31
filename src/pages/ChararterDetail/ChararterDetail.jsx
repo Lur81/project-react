@@ -4,6 +4,7 @@ import axios from "axios";
 import './ChararterDetail.scss'
 import Header from "../../components/Header/Header"
 import { useTranslation } from "react-i18next";
+import apiUrl from "../../config";
 
 
 export default function CharacterDetail() {
@@ -15,8 +16,8 @@ export default function CharacterDetail() {
     const [detail, setDetail] = useState([]);
 
     const getCharactersById = () => {
-        axios.get(`http://localhost:3000/characters/${id}`).then((res) => {
-           axios.get("http://localhost:3000/houses?name_like=" + res.data.house).then((resp) => {
+        axios.get(apiUrl + 'characters' + id).then((res) => {
+           axios.get(apiUrl + 'houses?name_like=' + res.data.house).then((resp) => {
             res.data.house = resp.data[0];
             setDetail(res.data);
            })
