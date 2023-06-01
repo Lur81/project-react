@@ -14,7 +14,6 @@ export default function ChronologyPage({ characters }) {
     ageAsc ? a.age - b.age : b.age - a.age
   );
 
-
   return (
     <div>
       <Header />
@@ -43,7 +42,7 @@ export default function ChronologyPage({ characters }) {
                     <div className="imagen">
                       <img
                         className="chrono_img"
-                        src={apiUrl + charac.image}
+                        src={charac.image}
                         alt={charac.name}
                       />
                     </div>

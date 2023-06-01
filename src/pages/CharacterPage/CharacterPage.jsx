@@ -4,7 +4,6 @@ import Header from "../../components/Header/Header"
 import './CharacterPage.scss';
 import { useContext, useState } from 'react';
 import { SearchContext } from '../../App';
-import apiUrl from '../../config';
 
 export default function CharacterPage({ characters }) {
   const [hoveredId, setHoveredId] = useState();
@@ -24,7 +23,7 @@ export default function CharacterPage({ characters }) {
                     >
                         <div className="imagen">
                              <Link to={`/characters/${charac.id}`}>
-                                <img src={apiUrl + charac.image} alt={charac.name} />
+                                <img src={charac.image} alt={charac.name} />
                                 {hoveredId === charac.id && <h3 className='nombre'>{charac.name}</h3>}
                              </Link>
                         </div>

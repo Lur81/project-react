@@ -26,14 +26,14 @@ function App() {
   const getCharacters = () => {
     axios.get(apiUrl + 'characters').then(res => {
         setCharacters(res.data)
-        console.log(res.data)
+        // console.log(res.data)
     })
   }
 
   const getHouses = () => {
     axios.get(apiUrl + 'houses').then(res => {
         setHouses(res.data)
-        console.log(res.data)
+        // console.log(res.data)
     })
   }
 

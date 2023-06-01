@@ -40,14 +40,14 @@ export default function CharacterDetail() {
          
             <div className="contenedor">
                 <div className="image-character-detail">
-                    <img src={`http://localhost:3000${detail.image}`} alt={detail.name} className="image-character" />
+                    <img src={detail.image} alt={detail.name} className="image-character" />
                     <h3 className="titulo-character-detail">{detail.name}</h3>
                 </div>
                 <div className="contenedor-detalles">
                         <div className="contenedor-house">
                             <h3 className="titulo-character-detail">{ t('house') }</h3>
                             {detail.house && detail.house.image && (
-                                <img src={`http://localhost:3000${detail.house.image}`} alt={detail.house.name} className="image-house"/>
+                                <img src={detail.house.image} alt={detail.house.name} className="image-house"/>
                             )}
                             {/* <img src={`http://localhost:3000${house}`} alt={detail.house} className="image-house"/> */}
                         </div>

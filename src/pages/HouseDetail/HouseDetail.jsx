@@ -16,9 +16,9 @@ export default function HouseDetail() {
     const [detail, setDetail] = useState([]);
 
     const getHousesById = () => {
-        axios.get(apiUrl + 'houses/' + id).then(res => {
+        axios.get(apiUrl + 'houses' + id).then(res => {
            setDetail(res.data)
-            console.log("getHousesById", res.data)
+            // console.log("getHousesById", res.data)
         })
     }
 
@@ -38,7 +38,7 @@ export default function HouseDetail() {
 
             <div className="contenedor">
                 <div className="image-character-detail">
-                <img src={apiUrl + detail.image} alt={detail.name} className="image-character" />
+                <img src={detail.image} alt={detail.name} className="image-character" />
                 <h2>{detail.name}</h2>
                 </div>
                 <div className="contenedor-detalles">

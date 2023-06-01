@@ -13,9 +13,9 @@ export default function Header(){
     }
 
     const location = useLocation()
-    console.log(location.pathname);
+    // console.log(location.pathname);
 
-    const {searchText, setSearchText} = useContext(SearchContext);
+    const {setSearchText} = useContext(SearchContext);
     
     useEffect(() => {
         setSearchText("");

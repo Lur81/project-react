@@ -4,7 +4,6 @@ import Header from "../../components/Header/Header"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { SearchContext } from '../../App';
-import apiUrl from '../../config';
 
 
 export default function HousePage ({houses}){
@@ -21,7 +20,7 @@ export default function HousePage ({houses}){
                             <div key={index}>
                                 <div className="homes">
                                     <Link to={`/houses/${house.id}`}>
-                                        <img src={apiUrl + house.image} alt={house.name}/>
+                                        <img src={house.image} alt={house.name}/>
                                         <h3 className="homes__name">{house.name}</h3>
                                     </Link>
 
